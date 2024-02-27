@@ -1,4 +1,4 @@
-import 'package:chess_mate_client/game/components/pieces/game/game_piece_component.dart';
+import 'package:chess_mate_client/game/components/pieces/pvp/pvp_piece_component.dart';
 import 'package:chess_mate_client/game/models/coordinate.dart';
 import 'package:flutter/widgets.dart';
 
@@ -7,7 +7,7 @@ class PvpController extends ChangeNotifier {
 
   PvpController({required this.fen});
 
-  GamePieceComponent? selectedPiece;
+  PvpPieceComponent? selectedPiece;
   Coordinate? nextPieceCoordinate;
 
   void _resetMove() {
