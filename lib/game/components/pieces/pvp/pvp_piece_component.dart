@@ -1,5 +1,6 @@
 import 'package:chess_mate_client/game/components/game/pvp_game.dart';
 import 'package:chess_mate_client/game/components/pieces/piece_component.dart';
+import 'package:chess_mate_client/game/helper/game_helper.dart';
 import 'package:chess_mate_client/game/models/coordinate.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
@@ -16,9 +17,11 @@ abstract class PvpPieceComponent extends PieceComponent with TapCallbacks {
   List<Vector2> moveablePosition();
 
   void move(Coordinate coordinate) {
-    final Vector2 destination = coordinateToPosition(coordinate);
+    final double pieceSize = gameRef.boardConfig.pieceSize;
+    final Vector2 destination = GameHelper.coordinateToPosition(coordinate, pieceSize);
     final MoveEffect move = MoveEffect.to(destination, EffectController(duration: 0.2, curve: Curves.ease));
 
+    this.coordinate = coordinate;
     add(move);
   }
 

@@ -1,4 +1,5 @@
-import 'package:chess_mate_client/widgets/game_screen.dart';
+import 'package:chess_mate_client/properties/app_color.dart';
+import 'package:chess_mate_client/widgets/screens/index.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GameScreen(),
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(backgroundColor: AppColor.appColor),
+        scaffoldBackgroundColor: AppColor.appColor,
+      ),
+      home: const Index(),
     );
   }
 }

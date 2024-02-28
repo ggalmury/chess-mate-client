@@ -2,8 +2,8 @@ import 'package:chess_mate_client/game/components/game/pvp_game.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
-class GameScreen extends StatelessWidget {
-  const GameScreen({super.key});
+class PvpScreen extends StatelessWidget {
+  const PvpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
