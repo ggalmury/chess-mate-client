@@ -1,5 +1,5 @@
-import 'package:chess_mate_client/widgets/atoms/app_img.dart';
 import 'package:chess_mate_client/widgets/atoms/navigation_bar_item.dart';
+import 'package:chess_mate_client/widgets/layouts/logo_appbar.dart';
 import 'package:chess_mate_client/widgets/molecules/navigation_bar_container.dart';
 import 'package:chess_mate_client/widgets/screens/opening_screen.dart';
 import 'package:chess_mate_client/widgets/screens/option_screen.dart';
@@ -31,19 +31,7 @@ class _IndexState extends State<Index> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          const SizedBox(width: 20),
-          AppImg.fromAsset(
-            assetPath: "assets/images/logo.png",
-            width: 40,
-            height: 40,
-            borderRadius: 99,
-          ),
-          const Spacer(),
-          const SizedBox(width: 20),
-        ],
-      ),
+      appBar: LogoAppBar(),
       body: SafeArea(
         child: _screens.elementAt(_pageIndex),
       ),

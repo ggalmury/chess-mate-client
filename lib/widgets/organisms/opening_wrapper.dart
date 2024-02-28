@@ -7,7 +7,7 @@ class OpeningWrapper extends StatelessWidget {
 
   Decoration _containerStyle() {
     return BoxDecoration(
-      color: AppColor.white,
+      color: AppColor.gray1,
       borderRadius: BorderRadius.circular(20),
     );
   }
@@ -15,16 +15,11 @@ class OpeningWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: MediaQuery.of(context).size.width * 0.95,
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: _containerStyle(),
-      child: GridView.builder(
+      child: ListView.builder(
         itemCount: 100,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          mainAxisSpacing: 10,
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 20),
         itemBuilder: (context, index) => const Center(child: OpeningContainer()),
       ),
     );
